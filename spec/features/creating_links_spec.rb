@@ -1,4 +1,3 @@
-require 'spec_helper'
 require './app/models/link.rb'
 
 feature "adding links" do

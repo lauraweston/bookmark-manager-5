@@ -8,7 +8,6 @@ class BookmarkManager < Sinatra::Base
 
   get '/links' do
     @links = Link.all
-    @tag = Tag.all
     erb :'links/index'
   end
 
@@ -18,9 +17,11 @@ class BookmarkManager < Sinatra::Base
 
   post '/links' do
     link = Link.create(:title => params[:title], :url => params[:url])
-    tag = Tag.first_or_create(:tag => params[:tag])
-    link.tags << tag
-    link.save
+    new_tags = params[:tag].split(" ")
+    new_tags.each do |tag|
+      link.tags << Tag.first_or_create(:tag => tag)
+      link.save
+    end
     redirect to('/links')
   end
 
