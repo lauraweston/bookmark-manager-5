@@ -1,0 +1,12 @@
+require_relative 'app/app'
+require_relative 'app/models/data_mapper_setup'
+
+task default: [:auto_upgrade]
+
+task :auto_upgrade do
+  DataMapper.auto_upgrade!
+end
+
+task :auto_migrate do
+  DataMapper.auto_migrate!
+end
