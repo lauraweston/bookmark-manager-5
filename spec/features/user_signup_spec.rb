@@ -1,5 +1,5 @@
 
-feature "Users" do
+feature "Sign up" do
   scenario "sign up for a new account" do
     sign_up
     expect(page).to have_content "Welcome laura@makers.com"
@@ -8,8 +8,11 @@ feature "Users" do
   end
 end
 
-feature "Users" do
-  scenario "sign up for a new account" do
+feature "Sign up" do
+  scenario "can't sign up if passwords do not match" do
     expect { sign_up_mismatching_password }.not_to change(User, :count)
+    expect(current_path).to eq('/')
+    expect(page).to have_content "Password and confirmation password do not match"
+
   end
 end
