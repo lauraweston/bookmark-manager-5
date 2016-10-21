@@ -20,7 +20,7 @@ def add_multiple_tags
 end
 
 def sign_up
-  visit "/"
+  visit "/signup"
   fill_in "email", with: "laura@makers.com"
   fill_in "password", with: "fghjklvgh"
   fill_in "password_confirmation", with: "fghjklvgh"
@@ -28,7 +28,7 @@ def sign_up
 end
 
 def sign_up_mismatching_password
-  visit "/"
+  visit "/signup"
   fill_in "email", with: "laura@makers.com"
   fill_in "password", with: "fghjklvgh"
   fill_in "password_confirmation", with: "8723tre2g"

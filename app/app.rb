@@ -18,12 +18,16 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/' do
-    @user = User.new
      erb :index
   end
 
-  post '/signup' do
-    @user = User.create(email: params[:email],
+  get '/signup' do
+    @user = User.new
+    erb :signup
+  end
+
+  post '/signup/new' do
+    @user = User.new(email: params[:email],
                       password: params[:password],
                       password_confirmation: params[:password_confirmation])
     if @user.save
@@ -31,7 +35,7 @@ class BookmarkManager < Sinatra::Base
       redirect to '/links'
     else
       flash.now[:notice] = "Password and confirmation password do not match"
-      erb :index
+      erb :signup
     end
   end
 

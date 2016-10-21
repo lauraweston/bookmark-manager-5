@@ -2,23 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Bookmark Manager Sign up</title>
+  <title>Bookmark Manager</title>
 </head>
 <body>
-  <% if flash[:notice] %>
-  <div id="notice"><%= flash[:notice] %></div>
-  <% end %>
-  <form action="/signup" method="POST">
-    <label for='email'>
-      Email: <input type="text" name="email" value="<%= @user.email %>" />
-    </label>
-    <label for='password'>
-      Password: <input type="text" name="password" />
-    </label>
-    <label for='password_confirmation'>
-      Password: <input type="text" name="password_confirmation" />
-    </label>
-    <input type="submit" value="Sign up" />
-  </form>
+  <h1>Bookmark Manager</h1>
+  <a href='/signup'> Sign up for an account </a>
 </body>
 </html>
