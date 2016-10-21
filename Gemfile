@@ -10,6 +10,7 @@ gem 'data_mapper'
 gem 'rake'
 gem 'dm-postgres-adapter'
 gem 'bcrypt'
+gem 'dm-validations'
 
 group :test do
   gem 'database_cleaner'

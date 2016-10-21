@@ -18,3 +18,19 @@ def add_multiple_tags
   fill_in 'tag', with: 'bubbles games'
   click_button 'Submit'
 end
+
+def sign_up
+  visit "/"
+  fill_in "email", with: "laura@makers.com"
+  fill_in "password", with: "fghjklvgh"
+  fill_in "password_confirmation", with: "fghjklvgh"
+  click_button "Sign up"
+end
+
+def sign_up_mismatching_password
+  visit "/"
+  fill_in "email", with: "laura@makers.com"
+  fill_in "password", with: "fghjklvgh"
+  fill_in "password_confirmation", with: "8723tre2g"
+  click_button "Sign up"
+end
