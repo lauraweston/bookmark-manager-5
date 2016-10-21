@@ -3,6 +3,7 @@ require 'dm-postgres-adapter'
 
 require_relative './link.rb'
 require_relative './tags.rb'
+require_relative './user.rb'
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_manager_#{ENV['RACK_ENV']}")
 DataMapper.finalize
